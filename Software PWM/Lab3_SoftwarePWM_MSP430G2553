@@ -20,7 +20,7 @@ int main(void)
 
     P1IE |= BIT3; //button interrupt
     P1IES |=BIT3; //sets to rising edge
-    P1IFG &= ~BIT3; //clears interupt flag
+    P1IFG &= ~BIT3; //clears interrupt flag
 
     TA0CTL = TASSEL_2 + MC_1 + ID_2 + TAIE; //Sets to have smclk, in up mode with divider of 4
 
