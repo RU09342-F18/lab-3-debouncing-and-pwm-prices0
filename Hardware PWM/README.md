@@ -1,18 +1,17 @@
+Author: Shane Price
+
+This code was written through sample code found on online forums that were modified for my needs.
+
+Written: Oct 5, 2018
+
+Last Updated: Oct 5, 2018 
 # Hardware PWM
-Now that you have done the software version of PWM, now it is time to start leveraging the other features of these Timer Modules.
+This part of the lab involved making pulse with modulation code based off of the hardware of the MSP boards, MSP430FR2311 and MSP430G2553. The code had the LED start at 50% duty cylce and each button press increased it by 10% until it reached 100% and then restarted from 0% duty cycle. For each button press/interrupt the second on board LED would toggle on/off to show that the interrupt did occur since each duty cycle interval is not seen by the eye.
 
-## Task
-You need to replicate the same behavior as in the software PWM, only using the Timer Modules ability to directly output to a GPIO Pin instead of managing them in software. One way to thing about what should happen is that unless your are doing some other things in your code, your system should initialize, set the Timer Modules, and then turn off the CPU.
-
-## Deliverables
-You will need to have two folders in this repository, one for each of the processors that you used for this part of the lab. Remember to replace this README with your own.
-
-### Hints
-Read up on the P1SEL registers as well as look at the Timer modules ability to multiplex.
-
-## Extra Work
-### Using ACLK
-Some of these microprocessors have a built in ACLK which is extremely slow compared to your up to 25MHz available on some of them. What is the overall impact on the system when using this clock? Can you actually use your PWM code with a clock that slow?
-
-### Ultra Low Power
-Using a combination of ACLK, Low Power Modes, and any other means you may deem necessary, optimize this PWM code to run at 50% duty cycle with a LED on the MSP430FR5994. In particular, time how long your code can run on the fully charged super capacitor. You do not need to worry about the button control in this case, and you will probably want to disable all the GPIO that you are not using (nudge, nudge, hint, hint).
+ ## Inputs and Outputs
+ ### MSP430G2553
+ #### Inputs: P1.3 (Button)
+ #### Outputs: P1.6 (LED), P1.0 (LED) 
+ ### MSP430FR2311
+ #### Inputs: P1.1 (Button)
+ #### Outputs: P1.0 (LED), P2.0 (LED) 
